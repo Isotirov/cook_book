@@ -1,3 +1,12 @@
+::marker
+    {
+        color: red;
+    }
+
+.red {
+    color: red;
+}
+
 @media (min-width: 1200px) {
     .u-block-4fcb-2 {
         min-height: 806px;

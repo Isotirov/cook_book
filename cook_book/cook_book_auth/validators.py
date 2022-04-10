@@ -6,19 +6,13 @@ from django.core.exceptions import ValidationError
 class NumericPasswordValidatorCustom(NumericPasswordValidator):
     def validate(self, password, user=None):
         if password.isdigit():
-            raise ValidationError("Избраната парола съдържа само цифри.")
-
-    def get_help_text(self):
-        return "Вашата парола не трябва да е само от цифри."
+            raise ValidationError("Вашата парола не трябва да е само от цифри.")
 
 
 class CommonPasswordValidatorCustom(CommonPasswordValidator):
     def validate(self, password, user=None):
         if password.lower().strip() in self.passwords:
             raise ValidationError("Паролата е често срещана.")
-
-    def get_help_text(self):
-        return "Изберете по-сложна парола."
 
 
 class MinimumLengthValidatorCustom(MinimumLengthValidator):
@@ -28,7 +22,4 @@ class MinimumLengthValidatorCustom(MinimumLengthValidator):
 
     def validate(self, password, user=None):
         if len(password) < self.min_length:
-            raise ValidationError(f'Вашата парола е твърде кратка.')
-
-    def get_help_text(self):
-        return f'Паролата трябва да съдържа минимум {self.min_length} символа.'
+            raise ValidationError(f'Паролата трябва да съдържа минимум {self.min_length} символа.')

@@ -9,11 +9,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1').split(' ')
 APP_ENV = os.getenv('APP_ENV')
-print(APP_ENV)
 
 DJANGO_APPS = [
     'django.contrib.admin',
@@ -101,12 +100,12 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'cook_book.cook_book_auth.validators.MinimumLengthValidatorCustom',
     },
-    # {
-    #     'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    # },
-    # {
-    #     'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    # },
+    {
+        'NAME': 'cook_book.cook_book_auth.validators.NumericPasswordValidatorCustom',
+    },
+    {
+        'NAME': 'cook_book.cook_book_auth.validators.CommonPasswordValidatorCustom',
+    },
 ]
 
 cloudinary.config(

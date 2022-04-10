@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d8f6c9ac-060c-4810-822d-752d478e1977" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/sign_in.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/sign_in.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +49,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../mims_cook_book" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -119,7 +120,7 @@
       <workItem from="1648793594403" duration="86000" />
       <workItem from="1648984896276" duration="200248000" />
       <workItem from="1649587250130" duration="6851000" />
-      <workItem from="1649606331791" duration="5637000" />
+      <workItem from="1649606331791" duration="9639000" />
     </task>
     <servers />
   </component>

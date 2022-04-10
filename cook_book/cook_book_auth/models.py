@@ -33,6 +33,9 @@ class CookBookManager(BaseUserManager):
 class CookBookCustomUser(AbstractBaseUser):
     email = models.EmailField(
         unique=True,
+        error_messages={
+            'unique': 'Този e-mail е вече регистриран.'
+        }
     )
 
     is_staff = models.BooleanField(

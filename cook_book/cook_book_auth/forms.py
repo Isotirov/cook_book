@@ -1,7 +1,6 @@
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import AuthenticationForm, UsernameField, UserCreationForm
-from django.core.exceptions import ValidationError
 
 UserModel = get_user_model()
 
@@ -17,7 +16,7 @@ class SignUpForm(UserCreationForm):
         widget=forms.PasswordInput(
             attrs={
                 'autocomplete': 'new-password',
-                'class': 'u-form-group u-form-name u-block-4fcb-50',
+                'class': 'u-form-group u-form-name u-block-4fcb-50 u-radius-16',
                 'placeholder': 'Въведете парола',
             }
         ),
@@ -27,7 +26,7 @@ class SignUpForm(UserCreationForm):
         widget=forms.PasswordInput(
             attrs={
                 'autocomplete': 'new-password',
-                'class': 'u-form-group u-form-name u-block-4fcb-50',
+                'class': 'u-form-group u-form-name u-block-4fcb-50 u-radius-16',
                 'placeholder': 'Въведете паролата отново',
             }
         ),
@@ -44,7 +43,7 @@ class SignUpForm(UserCreationForm):
             'email': forms.EmailInput(
                 attrs={
                     'placeholder': 'Въведете email',
-                    'class': 'u-form-group u-form-name u-block-4fcb-50',
+                    'class': 'u-form-group u-form-name u-block-4fcb-50 u-radius-16',
                 }
             ),
         }
@@ -59,7 +58,7 @@ class SignInForm(AuthenticationForm):
         label="E-mail",
         widget=forms.TextInput(
             attrs={
-                'class': 'u-grey-5 u-input u-input-rectangle u-block-4fcb-52',
+                'class': 'u-grey-5 u-input u-input-rectangle u-block-4fcb-52 u-radius-16',
                 'placeholder': 'Въведете e-mail',
                 'autofocus': True,
 
@@ -72,7 +71,7 @@ class SignInForm(AuthenticationForm):
         strip=False,
         widget=forms.PasswordInput(
             attrs={
-                "class": "u-grey-5 u-input u-input-rectangle u-block-4fcb-55",
+                "class": "u-grey-5 u-input u-input-rectangle u-block-4fcb-55 u-radius-16",
                 'placeholder': 'Въведете парола',
             }
         ),
