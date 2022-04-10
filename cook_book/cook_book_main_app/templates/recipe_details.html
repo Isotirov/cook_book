@@ -1,0 +1,269 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_name %}
+    <title>Детайли по рецептата</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'recipe_details.css' %}" media="screen">
+{% endblock %}
+
+{% block header_background %}
+    {% if object.type == object.STARTER %}
+        {% include 'headers/starters_header.html' %}
+    {% endif %}
+    {% if object.type == object.PASTA %}
+        {% include 'headers/pasta_header.html' %}
+    {% endif %}
+    {% if object.type == object.CAKE %}
+        {% include 'headers/cakes_header.html' %}
+    {% endif %}
+    {% if object.type == object.SWEET %}
+        {% include 'headers/deserts_header.html' %}
+    {% endif %}
+    {% if object.type == object.VEGAN %}
+        {% include 'headers/vegie_header.html' %}
+    {% endif %}
+    {% if object.type == object.MEAL %}
+        {% include 'headers/all_recipes.html' %}
+    {% endif %}
+{% endblock %}
+
+{% block nav %}
+    {% include 'navs/base_nav.html' %}
+{% endblock %}
+
+{% block page_content %}
+    <section class="u-align-center u-clearfix u-image u-section-1" id="sec-ba03" data-image-width="2000"
+             data-image-height="1333">
+        <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
+            <h1 class="u-custom-font u-font-open-sans u-text u-text-default u-text-1">Галерия</h1>
+            <div class="u-align-center u-expanded-width u-gallery u-layout-grid u-lightbox u-no-transition u-show-text-none u-gallery-1"
+                 id="carousel-130d">
+                <div class="u-gallery-inner u-gallery-inner-1" role="listbox">
+                    {% for image in object.mealimage_set.all %}
+                        <div class="u-effect-hover-zoom u-gallery-item u-gallery-item-1">
+                            <div class="u-back-slide">
+                                <img class="u-back-image u-expanded" src="{{ image.image.url }}">
+                            </div>
+                            <div class="u-align-center u-over-slide u-shading u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-over-slide-1">
+                                <h3 class="u-gallery-heading"></h3>
+                                <p class="u-gallery-text"></p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="u-align-center u-clearfix u-grey-15 u-section-2" id="sec-a5f5">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            {% if is_owner %}
+                <h2 class="u-align-center u-custom-font u-font-open-sans u-text u-text-1">Рецептата е моя</h2>
+            {% else %}
+                <h2 class="u-align-center u-custom-font u-font-open-sans u-text u-text-1">Рецептата е приготвена
+                    от:<br>{{ object.user.cookbookuserprofile }}
+                </h2>
+            {% endif %}
+            <div class="u-align-center u-container-style u-group u-group-1">
+                <div class="u-container-layout">
+                    <h5 class="u-align-center u-custom-font u-font-open-sans u-text u-text-2">
+                        Харесвания: {{ likes_count }}</h5>
+                </div>
+            </div>
+            <span class="u-align-left u-icon u-text-palette-2-base u-icon-1"><svg class="u-svg-link"
+                                                                                  preserveAspectRatio="xMidYMin slice"
+                                                                                  viewBox="0 0 51.997 51.997" style=""><use
+                    xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-ad4f"></use></svg><svg
+                    class="u-svg-content" viewBox="0 0 51.997 51.997" x="0px" y="0px" id="svg-ad4f"
+                    style="enable-background:new 0 0 51.997 51.997;"><path d="M51.911,16.242C51.152,7.888,45.239,1.827,37.839,1.827c-4.93,0-9.444,2.653-11.984,6.905
+	c-2.517-4.307-6.846-6.906-11.697-6.906c-7.399,0-13.313,6.061-14.071,14.415c-0.06,0.369-0.306,2.311,0.442,5.478
+	c1.078,4.568,3.568,8.723,7.199,12.013l18.115,16.439l18.426-16.438c3.631-3.291,6.121-7.445,7.199-12.014
+	C52.216,18.553,51.97,16.611,51.911,16.242z"></path></svg></span>
+            {% if request.user.is_authenticated and not liked and not is_owner %}
+                <div class="u-align-center u-container-style u-group u-group-2">
+                    <div class="u-container-layout">
+                        <h6 class="u-align-center u-custom-font u-font-open-sans u-text u-text-3">Харесва ми и на
+                            мен </h6>
+                        <span class="u-file-icon u-icon u-text-palette-1-base u-icon-2"
+                              data-href="{% url 'like' object.id %}"><img
+                                src="{% static 'icons/thumb_up.png' %}" alt=""></span>
+                    </div>
+                </div>
+            {% endif %}
+            {% if liked and not is_owner %}
+                <div class="u-align-center u-container-style u-group u-group-2">
+                    <div class="u-container-layout">
+                        <h6 class="u-align-center u-custom-font u-font-open-sans u-text u-text-3">Вече я хареса </h6>
+                        <span class="u-file-icon u-icon u-text-palette-1-base u-icon-2"><img
+                                src="{% static 'icons/landing_page.png' %}" alt=""></span>
+                    </div>
+                </div>
+            {% endif %}
+            <div class="u-accordion u-spacing-2 u-accordion-1">
+                <div class="u-accordion-item">
+                    <a class="u-radius-10 active u-accordion-link u-border-1 u-border-active-grey-25 u-border-grey-30 u-border-hover-grey-30 u-border-no-left u-border-no-right u-border-no-top u-button-style u-text-active-black u-text-grey-50 u-text-hover-black u-accordion-link-1"
+                       id="link-accordion-7c0e" aria-controls="accordion-7c0e" aria-selected="true">
+                        <span class="u-accordion-link-text">Съставки:</span><span
+                            class="u-accordion-link-icon u-icon u-icon-rounded u-palette-1-base u-radius-12 u-icon-3"><svg
+                            class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use
+                            xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-efea"></use></svg><svg
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                            xml:space="preserve" class="u-svg-content" viewBox="0 0 512 512" x="0px" y="0px"
+                            id="svg-efea" style="enable-background:new 0 0 512 512;"><g><g><path d="M509.121,125.966c-3.838-3.838-10.055-3.838-13.893,0L256.005,365.194L16.771,125.966c-3.838-3.838-10.055-3.838-13.893,0    c-3.838,3.838-3.838,10.055,0,13.893l246.18,246.175c1.842,1.842,4.337,2.878,6.947,2.878c2.61,0,5.104-1.036,6.946-2.878    l246.17-246.175C512.959,136.021,512.959,129.804,509.121,125.966z"></path>
+</g>
+</g></svg></span>
+                    </a>
+                    <div class="u-radius-10 u-accordion-active u-accordion-pane u-align-left u-border-2 u-border-grey-60 u-container-style u-grey-5 u-accordion-pane-1"
+                         id="accordion-7c0e" aria-labelledby="link-accordion-7c0e">
+                        <div class="u-container-layout u-valign-top u-container-layout-3">
+                            <ul class="u-custom-list u-text u-text-4">
+                                {% for ingredient in ingredients %}
+                                    <li>
+                                        - {{ ingredient }}
+                                        <hr>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="u-accordion-item">
+                    <a class="u-radius-10 u-accordion-link u-border-1 u-border-active-grey-25 u-border-grey-30 u-border-hover-grey-30 u-border-no-left u-border-no-right u-border-no-top u-button-style u-text-active-black u-text-grey-50 u-text-hover-black u-accordion-link-2"
+                       id="link-accordion-05cb" aria-controls="accordion-05cb" aria-selected="false">
+              <span class="u-accordion-link-text">Време за приготвяне:<br>
+              </span><span class="u-accordion-link-icon u-icon u-icon-rounded u-palette-1-base u-radius-12 u-icon-4"><svg
+                            class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use
+                            xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-6ce4"></use></svg><svg
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                            xml:space="preserve" class="u-svg-content" viewBox="0 0 512 512" x="0px" y="0px"
+                            id="svg-6ce4" style="enable-background:new 0 0 512 512;"><g><g><path d="M509.121,125.966c-3.838-3.838-10.055-3.838-13.893,0L256.005,365.194L16.771,125.966c-3.838-3.838-10.055-3.838-13.893,0    c-3.838,3.838-3.838,10.055,0,13.893l246.18,246.175c1.842,1.842,4.337,2.878,6.947,2.878c2.61,0,5.104-1.036,6.946-2.878    l246.17-246.175C512.959,136.021,512.959,129.804,509.121,125.966z"></path>
+</g>
+</g></svg></span>
+                    </a>
+                    <div class="u-radius-10 u-accordion-pane u-align-left u-border-2 u-border-grey-60 u-container-style u-grey-5 u-accordion-pane-2"
+                         id="accordion-05cb" aria-labelledby="link-accordion-05cb">
+                        <div class="u-container-layout u-container-layout-4">
+                            <ul class="u-custom-list u-text u-text-5">
+                                {% if object.cooking_time %}
+                                    <li>
+                                        - {{ object.format_cooking_time }}
+                                        <hr>
+                                    </li>
+                                {% else %}
+                                    <li>
+                                        - Не е въведено време.
+                                        <hr>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="u-accordion-item">
+                    <a class="u-radius-10 u-accordion-link u-border-1 u-border-active-grey-25 u-border-grey-30 u-border-hover-grey-30 u-border-no-left u-border-no-right u-border-no-top u-button-style u-text-active-black u-text-grey-50 u-text-hover-black u-accordion-link-3"
+                       id="link-accordion-a6bb" aria-controls="accordion-a6bb" aria-selected="false">
+                        <span class="u-accordion-link-text">Приготвяне:</span><span
+                            class="u-accordion-link-icon u-icon u-icon-rounded u-palette-1-base u-radius-12 u-icon-5"><svg
+                            class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use
+                            xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-4429"></use></svg><svg
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                            xml:space="preserve" class="u-svg-content" viewBox="0 0 512 512" x="0px" y="0px"
+                            id="svg-4429" style="enable-background:new 0 0 512 512;"><g><g><path d="M509.121,125.966c-3.838-3.838-10.055-3.838-13.893,0L256.005,365.194L16.771,125.966c-3.838-3.838-10.055-3.838-13.893,0    c-3.838,3.838-3.838,10.055,0,13.893l246.18,246.175c1.842,1.842,4.337,2.878,6.947,2.878c2.61,0,5.104-1.036,6.946-2.878    l246.17-246.175C512.959,136.021,512.959,129.804,509.121,125.966z"></path>
+</g>
+</g></svg></span>
+                    </a>
+                    <div class="u-radius-10 u-accordion-pane u-align-left u-border-2 u-border-grey-60 u-container-style u-grey-5 u-accordion-pane-3"
+                         id="accordion-a6bb" aria-labelledby="link-accordion-a6bb">
+                        <div class="u-container-layout u-valign-top u-container-layout-5">
+                            <ul class="u-text u-text-5">
+                                <li> {{ object.description }}</li>
+                                <hr>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% if not comments %}
+        <section class="u-align-center u-clearfix u-section-3" id="sec-6b7c">
+            <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+                <h3 class="u-text u-text-default u-text-1">ВСЕ ОЩЕ НЯМА КОМЕНТАРИ</h3>
+            </div>
+        </section>
+
+    {% else %}
+        <section class="u-align-center u-clearfix u-section-3" id="sec-6b7c">
+            <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+                <h3 class="u-text u-text-default u-text-1">КОМЕНТАРИ</h3>
+            </div>
+        </section>
+        {% for comment in comments %}
+            <section class="u-align-center u-clearfix u-section-4" id="sec-df97">
+                <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+                    <div class="u-align-center u-clearfix u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-gutter-0 u-layout-custom-sm u-layout-custom-xs u-layout-wrap u-layout-wrap-1">
+                        <div class="u-gutter-0 u-layout">
+                            <div class="u-layout-row">
+                                <div class="u-container-style u-layout-cell u-size-14-xs u-size-7-lg u-size-7-md u-size-7-sm u-size-8-xl u-layout-cell-1">
+                                    <div class="u-container-layout u-valign-top u-container-layout-1">
+                                        {% if comment.user.cookbookuserprofile.image %}
+                                            <img class="u-image u-image-circle u-image-1"
+                                                 src="{{ comment.user.cookbookuserprofile.image.url }}"
+                                                 alt="" data-image-width="1280" data-image-height="854">
+                                        {% else %}
+                                            <img class="u-image u-image-circle u-image-1"
+                                                 src="{% static 'icons/default-profile-picture.png' %}"
+                                                 alt="" data-image-width="1280" data-image-height="854">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="u-container-style u-layout-cell u-size-46-xs u-size-52-xl u-size-53-lg u-size-53-md u-size-53-sm u-layout-cell-2">
+                                    <div class="u-container-layout u-container-layout-2">
+                                        <h5 class="u-text u-text-default u-text-1">{{ comment.user.cookbookuserprofile }}</h5>
+                                        <p class="u-text u-text-2">{{ comment.comment }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endfor %}
+    {% endif %}
+    {% if request.user.is_authenticated and not is_owner %}
+        <section class="u-clearfix u-section-5" id="sec-ec81">
+            <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+                <div class="comment_form u-align-center u-border-2 u-border-white u-form u-radius-10 u-form-1">
+                    <form action="{% url 'comment' object.id %}" method="POST">
+                        {% csrf_token %}
+                        {% for field in comment_form.visible_fields %}
+                            {{ field }}
+                        {% endfor %}
+{#                        {% for field in comment_form.hidden_fields %}#}
+{#                            {{ field }}#}
+{#                        {% endfor %}#}
+
+                        {% if not request.user.cookbookuserprofile.is_complete %}
+                            <div class="u-align-center u-form-group">
+                                <a href="{% url 'update profile' request.user.id %}"
+                                   class="u-active-palette-1-base u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-2-base u-radius-10 u-btn-1">Попълнете
+                                    профила си първо</a>
+                                {#                                <input type="submit" value="submit" class="u-form-control-hidden">#}
+                            </div>
+                        {% else %}
+                            <div class="u-align-center u-form-group u-form-submit">
+                                <a href="#"
+                                   class="u-active-palette-1-base u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-2-base u-radius-10 u-btn-1">Запази</a>
+                                <input type="submit" value="submit" class="u-form-control-hidden">
+                            </div>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+
+{% endblock %}

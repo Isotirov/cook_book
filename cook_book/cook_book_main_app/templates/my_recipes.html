@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_name %}
+    <title>Моите рецепти</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'my_recipes.css' %}" media="screen">
+{% endblock %}
+
+{% block header_background %}
+    {% include 'headers/my_recipes.html' %}
+{% endblock %}
+
+{% block nav %}
+    {% include 'navs/base_nav.html' %}
+{% endblock %}
+
+{% block page_content %}
+    <section class="u-clearfix u-image u-section-2" id="sec-d730" data-image-width="2000" data-image-height="1333">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <h2 class="u-custom-font u-font-open-sans u-text u-text-white u-text-1 center">моите рецепти</h2>
+            <a href="{% url 'add recipe' %}"
+               class="u-active-palette-1-base u-align-center u-btn u-btn-round u-button-style u-gradient u-hover-palette-2-base u-none u-radius-15 u-text-active-black u-text-hover-grey-50 u-btn-1">Добави
+                рецепта</a>
+            <div class="u-align-center u-expanded-width u-layout-grid u-list u-list-1">
+                <div class="u-repeater u-repeater-1">
+                    {% for recipe in object_list %}
+                        <div class="u-container-style u-hover-feature u-list-item u-repeater-item u-list-item-1">
+                            {#                         data-href="https://nicepage.com" data-animation-name="flipIn" data-animation-duration="1000"#}
+                            {#                         data-animation-direction="X" data-animation-out="0">#}
+                            <div class="u-container-layout u-similar-container u-container-layout-1">
+                                <a href="{% url 'recipe details' recipe.id %}"><img alt=""
+                                                                                    class="u-expanded-width u-image u-image-round u-radius-15 u-image-1"
+                                                                                    data-image-width="2000"
+                                                                                    data-image-height="1333"
+                                        {% if recipe.mealimage_set.first %}
+                                                                                    src="{{ recipe.mealimage_set.first.image.url }}"
+                                        {% else %}
+                                                                                    src="{% static 'images/default-meal-image.svg' %}"
+                                        {% endif %}
+                                                                                    data-animation-out="0"></a>
+
+                                <h3 class="u-align-center u-custom-font u-font-open-sans u-text u-text-body-alt-color u-text-default u-text-1">
+                                    <a href="{% url 'recipe details' recipe.id %}">{{ recipe.title }}</a></h3>
+                                <a href="{% url 'my recipe details' recipe.id %}"
+                                   class="u-active-palette-1-base u-btn u-btn-round u-button-style u-gradient u-hover-palette-2-base u-none u-radius-15 u-text-active-black u-text-hover-grey-50 u-btn-2">Прегледай</a>
+                                <a href="{% url 'delete recipe' recipe.id %}"
+                                   class="u-active-palette-1-base u-btn u-btn-round u-button-style u-gradient u-hover-palette-2-base u-none u-radius-15 u-text-active-black u-text-hover-grey-50 u-btn-3">изтрий</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

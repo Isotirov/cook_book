@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Добре дошли в домашния кулинарен рецептурник">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Домашен кулинарник</title>
+    <link rel="stylesheet" href="{% static 'main_landing_page.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'landing_page.css' %}" media="screen">
+    <script class="u-script" type="text/javascript" src="{% static 'jquery.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'main.js' %}" defer=""></script>
+    <link id="u-theme-google-font" rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+
+</head>
+<body class="u-body u-xl-mode">
+
+{% include 'headers/landing_sign_in_sign_up_header.html' %}
+
+<section class="u-align-center u-clearfix u-grey-5 u-section-1" id="sec-ce5d">
+    <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-expanded-width-sm u-expanded-width-xs u-layout-grid u-list u-list-1">
+            <div class="u-repeater u-repeater-1">
+                <div class="u-align-center u-container-style u-custom-item u-list-item u-repeater-item u-white u-list-item-1"
+                     data-href="{% url 'sign up' %}">
+                    <div class="u-container-layout u-similar-container u-container-layout-1 cool_shadow">
+                        <h5 class="u-text u-text-default u-text-1">
+                            <a class="u-btn u-button-link u-button-style u-none u-text-active-palette-4-base u-text-black u-text-hover-palette-2-dark-1 u-btn-1"
+                               href="{% url 'sign up' %}" data-animation-name="" data-animation-duration="0" data-animation-delay="0"
+                               data-animation-direction="">Регистрация</a>
+                        </h5>
+                        <p class="u-custom-item u-text u-text-2">
+                            <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-black u-btn-2"
+                               href="{% url 'sign up' %}">Имаш вкусна рецепта!<br>Регистрирай се и я сподели.
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="u-align-center u-container-style u-custom-item u-list-item u-repeater-item u-white u-list-item-2"
+                     data-href="{% url 'sign in' %}">
+                    <div class="u-container-layout u-similar-container u-container-layout-2 cool_shadow">
+                        <h5 class="u-text u-text-default u-text-3">
+                            <a class="u-btn u-button-link u-button-style u-none u-text-active-palette-4-base u-text-black u-text-hover-palette-2-dark-1 u-btn-3"
+                               href="{% url 'sign in' %}" data-animation-name="" data-animation-duration="0" data-animation-delay="0"
+                               data-animation-direction="">Вход</a>
+                        </h5>
+                        <p class="u-custom-item u-text u-text-4">
+                            <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-black u-btn-4"
+                               href="{% url 'sign in' %}">Влез да твориш!</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="u-align-center u-container-style u-group u-white u-group-1" data-animation-name=""
+             data-animation-duration="0" data-animation-delay="0" data-animation-direction="" data-href="{% url 'all recipes' %}">
+            <div class="u-container-layout u-container-layout-3 cool_shadow">
+                <h5 class="u-text u-text-default u-text-5">
+                    <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-active-palette-4-base u-text-black u-text-hover-palette-2-dark-1 u-btn-5"
+                       href="{% url 'all recipes' %}">Разглеждане без регистрация</a>
+                </h5>
+                <h5 class="u-text u-text-default u-text-6">
+                    <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-active-palette-4-base u-text-black u-btn-6"
+                       href="{% url 'all recipes' %}">Има вкусни идеи</a>
+                </h5><span class="u-file-icon u-icon u-icon-1" data-href="{% url 'all recipes' %}"><img
+                    src="{% static 'icons/landing_page.png' %}" alt=""></span>
+            </div>
+        </div>
+        <div class="u-expanded-width-xs u-image u-image-circle u-preserve-proportions u-image-1" alt=""
+             data-image-width="150" data-image-height="100">
+            <div class="u-preserve-proportions-child" style="padding-top: 100%;"></div>
+        </div>
+    </div>
+</section>
+
+{% include 'footer.html' %}
+
+</body>
+</html>

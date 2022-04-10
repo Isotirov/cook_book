@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_name %}
+    <title>Редактиране на снимки</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'my_recipe_images.css' %}" media="screen">
+{% endblock %}
+
+{% block header_background %}
+    {% include 'headers/all_recipes.html' %}
+{% endblock %}
+
+{% block nav %}
+    {% include 'navs/base_nav.html' %}
+{% endblock %}
+
+{% block page_content %}
+    <section class="u-clearfix u-section-1" id="sec-0835">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <h1 class="u-align-center u-custom-font u-font-open-sans u-text u-text-default u-text-1">Редактиране на
+                снимки</h1>
+            {% if not full %}
+                <a href="{% url 'upload my files' object.id %}"
+                   class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-1">Добавяне
+                    на снимки<br>
+                </a>
+            {% else %}
+                <h2 class="u-align-center u-custom-font u-font-open-sans u-text u-text-default u-text-1">Максимален брой
+                    снимки достигнат</h2>
+            {% endif %}
+            <div class="u-expanded-width u-list u-list-1">
+                <div class="u-repeater u-repeater-1">
+                    {% for image in object.mealimage_set.all %}
+                        <div class="u-container-style u-list-item u-repeater-item">
+                            <div class="u-container-layout u-similar-container u-container-layout-1">
+                                <img alt="" class="u-expanded-width u-image u-image-default u-image-1"
+                                     data-image-width="2000" data-image-height="1333" src="{{ image.image.url }}">
+                                <a href="{% url 'delete image' image.id %}"
+                                   onclick="return confirm('Сигурни ли сте?');"
+                                   class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-radius-10 u-btn-2">Изтриване</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <a href="{% url 'my recipe details' object.id %}"
+               class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-8">Приключване
+                на редакцията<br>
+            </a>
+        </div>
+    </section>
+{% endblock %}

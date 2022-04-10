@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_name %}
+    <title>Моят профил</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'profile.css' %}" media="screen">
+{% endblock %}
+
+{% block header_background %}
+    {% include 'headers/my_recipes.html' %}
+{% endblock %}
+
+{% block nav %}
+    {% include 'navs/base_nav.html' %}
+{% endblock %}
+
+{% block page_content %}
+    <section class="u-clearfix u-grey-5 u-section-1" id="sec-53ab">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-clearfix u-expanded-width u-gutter-10 u-layout-wrap u-layout-wrap-1">
+                <div class="u-layout" style="">
+                    <div class="u-layout-row" style="">
+                        <div class="u-container-style u-layout-cell u-left-cell u-size-30 u-size-xs-60 u-layout-cell-1"
+                             src="">
+                            <div class="u-container-layout u-valign-middle u-container-layout-1">
+                                <div class="u-expanded-width u-list u-list-1">
+                                    <div class="u-repeater u-repeater-1">
+                                        <div class="u-border-2 u-border-grey-15 u-container-style u-list-item u-radius-10 u-repeater-item u-shape-round">
+                                            <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2">
+                                                <p class="u-align-center u-text u-text-default u-text-grey-70 u-text-1">{{ object.first_name }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="u-border-2 u-border-grey-15 u-container-style u-list-item u-radius-10 u-repeater-item u-shape-round">
+                                            <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3">
+                                                <p class="u-align-center u-text u-text-default u-text-grey-70 u-text-2">{{ object.last_name }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="u-border-2 u-border-grey-15 u-container-style u-list-item u-radius-10 u-repeater-item u-shape-round">
+                                            <div class="u-container-layout u-similar-container u-valign-top u-container-layout-4">
+                                                <p class="u-align-center u-text u-text-default u-text-grey-70 u-text-3">
+                                                    Дата на регистрация: {{ date }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="u-border-2 u-border-grey-15 u-container-style u-list-item u-radius-10 u-repeater-item u-shape-round">
+                                            <div class="u-container-layout u-similar-container u-valign-top u-container-layout-5">
+                                                <p class="u-align-center u-text u-text-default u-text-grey-70 u-text-4">
+                                                    Общ брой рецепти: {{ recipes_count }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="u-border-2 u-border-grey-15 u-container-style u-list-item u-radius-10 u-repeater-item u-shape-round">
+                                            <div class="u-container-layout u-similar-container u-valign-top u-container-layout-6">
+                                                <p class="u-align-center u-text u-text-default u-text-grey-70 u-text-5">
+                                                    Харесвания на рецептите: {{ recipes_likes_count }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="u-align-center u-container-style u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-layout-cell-2"
+                             src="">
+                            <div class="u-container-layout u-container-layout-7" src="">
+                                <img class="u-align-left u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-image u-image-round u-preserve-proportions u-radius-10 u-image-1"
+                                     data-image-width="1280" data-image-height="854" src="{{ object.image.url }}">
+                                <div class="u-align-left u-image u-image-round u-preserve-proportions u-radius-10 u-image-2"
+                                     data-image-width="1280" data-image-height="854"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="{% url 'update profile' object.pk %}"
+               class="u-active-palette-1-base u-align-center u-border-none u-btn u-btn-round u-button-style u-hover-palette-2-base u-palette-1-base u-radius-50 u-btn-1">Промени</a>
+        </div>
+    </section>
+{% endblock %}

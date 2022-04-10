@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Добре дошли в домашния кулинарен рецептурник">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Вход</title>
+    <link rel="stylesheet" href="{% static 'main_landing_page.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'sign_in.css' %}" media="screen">
+    <script class="u-script" type="text/javascript" src="{% static 'jquery.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'main.js' %}" defer=""></script>
+    <link id="u-theme-google-font" rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+</head>
+
+<body class="u-body u-xl-mode" data-style="login-template-1" data-posts=""
+      data-global-section-properties="{&quot;code&quot;:&quot;LOGIN&quot;,&quot;colorings&quot;:{&quot;light&quot;:[&quot;clean&quot;,&quot;clean&quot;],&quot;colored&quot;:[&quot;clean&quot;,&quot;clean&quot;,&quot;clean&quot;],&quot;dark&quot;:[&quot;clean&quot;,&quot;clean&quot;,&quot;clean&quot;]},&quot;isPreset&quot;:true}"
+      data-source="fix"
+      data-page-sections-style="[{&quot;name&quot;:&quot;login-form-1&quot;,&quot;margin&quot;:&quot;both&quot;,&quot;repeat&quot;:false}]"
+      data-page-coloring-types="{&quot;light&quot;:[&quot;clean&quot;,&quot;clean&quot;],&quot;colored&quot;:[&quot;clean&quot;,&quot;clean&quot;,&quot;clean&quot;],&quot;dark&quot;:[&quot;clean&quot;,&quot;clean&quot;,&quot;clean&quot;]}"
+      data-page-category="&quot;Login&quot;">
+
+{% include 'headers/landing_sign_in_sign_up_header.html' %}
+
+<section class="u-align-center u-clearfix u-block-4fcb-64" custom-posts-hash="T"
+         data-section-properties="{&quot;margin&quot;:&quot;both&quot;,&quot;stretch&quot;:true}" data-id="4fcb"
+         data-style="login-form-1" id="carousel_83ed" data-source="functional_fix">
+    <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-block-4fcb-2">
+
+        <div class="u-align-center u-container-style u-expanded-width-xs u-group u-radius-50 u-shape-round u-white u-block-4fcb-46 cool_shadow">
+            <div class="u-container-layout u-block-4fcb-47 cool_shadow"><span
+                    class="u-file-icon u-icon u-icon-circle u-palette-4-base u-spacing-22 u-block-4fcb-63">
+                        <img src="{% static 'icons/sign-in.png' %}" alt="Вход"
+                             data-color="#000000"></span>
+                <h3 class="u-custom-font u-font-montserrat u-text u-text-default u-block-4fcb-48">Здравейте отново!</h3>
+                <div class="u-form u-login-control u-white u-block-4fcb-49">
+                    <form action="{% url 'sign in' %}" method="POST" autocomplete="off"
+                          class="u-clearfix u-form-custom-backend u-form-spacing-20 u-form-vertical u-inner-form"
+                          source="custom" name="form" style="padding: 30px;">
+                        {% csrf_token %}
+                        <div class="u-form-group u-form-name u-block-4fcb-50">
+                            {{ form }}
+                        </div>
+{#                        <div class="u-form-group u-form-password u-block-4fcb-53">#}
+{#                            {{ form.password }}#}
+{#                        </div>#}
+                        <div class="u-form-checkbox u-form-group u-block-4fcb-56">
+                            <input type="checkbox" id="checkbox-a30d" name="remember" value="On">
+                            <label for="checkbox-a30d" class="u-label u-block-4fcb-57">Запомни ме</label>
+                        </div>
+                        <div class="u-align-right u-form-group u-form-submit u-block-4fcb-58">
+                            <button
+                                    class="u-border-none u-btn u-btn-submit u-button-style u-palette-4-base u-block-4fcb-59">
+                                Вход
+                            </button>
+                            <input type="submit" value="submit" class="u-form-control-hidden">
+                        </div>
+                        <input type="hidden" value="" name="recaptchaResponse">
+
+                    </form>
+                </div>
+                <a href="#"
+                   class="u-border-active-palette-2-base u-border-hover-palette-1-base u-border-none u-btn u-button-style u-login-control u-login-forgot-password u-none u-text-grey-40 u-text-hover-palette-4-base u-block-4fcb-60">Забравена
+                    парола</a><a href="{% url 'sign up' %}"
+                                 class="u-border-active-palette-2-base u-border-hover-palette-1-base u-border-none u-btn u-button-style u-login-control u-login-create-account u-none u-text-grey-40 u-text-hover-palette-4-base u-block-4fcb-61">Нямате
+                    акаунт?</a></div>
+        </div>
+    </div>
+
+</section>
+
+{% include 'footer.html' %}
+
+</body>
+</html>

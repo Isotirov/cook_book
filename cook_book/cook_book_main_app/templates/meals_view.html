@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_name %}
+    {% if request.path == '/starters/' %}
+        <title>Предястия</title>
+    {% endif %}
+    {% if request.path == '/pasta/' %}
+        <title>Тестени</title>
+    {% endif %}
+    {% if request.path == '/cakes/' %}
+        <title>Торти</title>
+    {% endif %}
+    {% if request.path == '/deserts/' %}
+        <title>Сладки</title>
+    {% endif %}
+    {% if request.path == '/vegan/' %}
+        <title>Веган блюда</title>
+    {% endif %}
+    {% if request.path == '/meal/' %}
+        <title>Основни ястия</title>
+    {% endif %}
+    {% if request.path == '/all-meals/' %}
+        <title>Всички рецепти</title>
+    {% endif %}
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'meals_view.css' %}" media="screen">
+{% endblock %}
+
+<body class="u-body u-xl-mode">
+
+{% block header_background %}
+    {% if request.path == '/starters/' %}
+        {% include 'headers/starters_header.html' %}
+    {% endif %}
+    {% if request.path == '/pasta/' %}
+        {% include 'headers/pasta_header.html' %}
+    {% endif %}
+    {% if request.path == '/cakes/' %}
+        {% include 'headers/cakes_header.html' %}
+    {% endif %}
+    {% if request.path == '/deserts/' %}
+        {% include 'headers/deserts_header.html' %}
+    {% endif %}
+    {% if request.path == '/vegan/' %}
+        {% include 'headers/vegie_header.html' %}
+    {% endif %}
+    {% if request.path == '/meal/' or request.path == '/all-meals/' %}
+        {% include 'headers/all_recipes.html' %}
+    {% endif %}
+{% endblock %}
+
+{% block nav %}
+    {% include 'navs/base_nav.html' %}
+{% endblock %}
+
+{% block page_content %}
+    <section class="u-clearfix u-image u-section-1" id="sec-c620">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-expanded-width-lg u-expanded-width-md u-expanded-width-xl u-layout-grid u-list u-list-1">
+                <div class="u-repeater u-repeater-1">
+
+                    {% for recipe in object_list %}
+                        <div class="u-container-style u-hover-feature u-list-item u-repeater-item u-list-item-1">
+                            <div class="u-container-layout u-similar-container u-container-layout-1">
+                                <a href="{% url 'recipe details' recipe.id %}"><img alt=""
+                                     class="u-align-center-xs u-expanded-width-lg u-expanded-width-md u-expanded-width-xl u-image u-image-round u-radius-15 u-image-1"
+                                     data-image-width="2000" data-image-height="1333"
+                                        {% if recipe.mealimage_set.first %}
+                                     src="{{ recipe.mealimage_set.first.image.url }}"
+                                        {% else %}
+                                     src="{% static 'images/default-meal-image.svg' %}"
+                                        {% endif %}
+                                     data-href=""
+                                     data-animation-out="0"></a>
+                                <h3 class="u-align-center u-custom-font u-font-open-sans u-text u-text-body-alt-color u-text-default u-text-1"><a href="{% url 'recipe details' recipe.id %}">{{ recipe.title }}</a></h3>
+                                <a href="{% url 'recipe details' recipe.id %}"
+                                   class="u-active-palette-1-base u-btn u-btn-round u-button-style u-gradient u-hover-palette-2-base u-none u-radius-15 u-text-active-black u-text-hover-grey-50 u-btn-1">Към
+                                    рецептата</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

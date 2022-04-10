@@ -1,0 +1,137 @@
+<div class="u-custom-menu u-nav-container">
+    <ul class="u-nav u-spacing-1 u-unstyled u-nav-1">
+        <li class="u-nav-item"><a
+                class="u-button-style u-custom-color-1 u-hover-white u-nav-link u-radius-16 u-text-hover-black" href="{% url 'landing page' %}"
+                style="padding: 10px 14px;">Начало</a>
+        </li>
+        {% if not request.user.is_authenticated %}
+            <li class="u-nav-item"><a
+                    class="u-button-style u-custom-color-1 u-hover-white u-nav-link u-radius-16 u-text-hover-black"
+                    href="{% url 'sign in' %}"
+                    style="padding: 10px 14px;">Вход</a>
+            </li>
+            <li class="u-nav-item"><a
+                    class="u-button-style u-custom-color-1 u-hover-white u-nav-link u-radius-16 u-text-hover-black"
+                    href="{% url 'sign up' %}"
+                    style="padding: 10px 14px;">Регистрация</a>
+            </li>
+        {% endif %}
+        <li class="u-nav-item"><a
+                class="u-button-style u-custom-color-1 u-hover-white u-nav-link u-radius-16 u-text-hover-black" href="#"
+                style="padding: 10px 14px;">Категории</a>
+            <div class="u-nav-popup">
+                <ul class="u-h-spacing-10 u-nav u-unstyled u-v-spacing-8">
+                    <li class="u-nav-item"><a
+                            class="u-button-style u-custom-color-1 u-hover-white u-nav-link u-radius-16"
+                            href="{% url 'starters' %}">Предястия</a>
+                    </li>
+                    <li class="u-nav-item"><a
+                            class="u-button-style u-custom-color-1 u-hover-white u-nav-link u-radius-16"
+                            href="{% url 'pasta' %}">Тестени</a>
+                    </li>
+                    <li class="u-nav-item"><a
+                            class="u-button-style u-custom-color-1 u-hover-white u-nav-link u-radius-16"
+                            href="{% url 'meal' %}">Основни
+                        ястия</a>
+                    </li>
+                    <li class="u-nav-item"><a
+                            class="u-button-style u-custom-color-1 u-hover-white u-nav-link u-radius-16"
+                            href="{% url 'cakes' %}">Торти</a>
+                    </li>
+                    <li class="u-nav-item"><a
+                            class="u-button-style u-custom-color-1 u-hover-white u-nav-link u-radius-16"
+                            href="{% url 'deserts' %}">Сладки</a>
+                    </li>
+                    <li class="u-nav-item"><a
+                            class="u-button-style u-custom-color-1 u-hover-white u-nav-link u-radius-16"
+                            href="{% url 'vegan' %}">Здравословни</a>
+                    </li>
+                    <li class="u-nav-item"><a
+                            class="u-button-style u-custom-color-1 u-hover-white u-nav-link u-radius-16"
+                            href="{% url 'all recipes' %}">Всички</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        {% if request.user.is_authenticated %}
+            <li class="u-nav-item"><a
+                    class="u-button-style u-custom-color-1 u-hover-white u-nav-link u-radius-16 u-text-hover-black"
+                    href="{% url 'my recipes' %}"
+                    style="padding: 10px 14px;">Моите рецепти</a>
+            </li>
+            <li class="u-nav-item"><a
+                    class="u-button-style u-custom-color-1 u-hover-white u-nav-link u-radius-16 u-text-hover-black"
+                    href="{% url 'add recipe' %}"
+                    style="padding: 10px 14px;">Добави рецепта</a>
+            </li>
+            <li class="u-nav-item"><a
+                    class="u-button-style u-custom-color-1 u-hover-white u-nav-link u-radius-16 u-text-hover-black"
+                    href="{% url 'profile details' request.user.id %}"
+                    style="padding: 10px 14px;">Моят профил</a>
+            </li>
+            <li class="u-nav-item"><a
+                    class="u-button-style u-custom-color-1 u-hover-white u-nav-link u-radius-16 u-text-hover-black"
+                    href="{% url 'log out' %}"
+                    style="padding: 10px 27px 10px 14px;">Изход</a>
+            </li>
+            <li class="u-nav-item"><a
+                    class="u-button-style u-custom-color-1 u-hover-white u-nav-link u-text-hover-black" href="{% url 'profile details' request.user.id %}"
+                    style="padding: 10px 27px 10px 14px;">Здравейте, {{ request.user.cookbookuserprofile.first_name }}!</a>
+            </li>
+        {% endif %}
+    </ul>
+</div>
+<div class="u-custom-menu u-nav-container-collapse">
+    <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+        <div class="u-inner-container-layout u-sidenav-overflow">
+            <div class="u-menu-close"></div>
+            <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3">
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'landing page' %}">Начало</a>
+                </li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'sign in' %}">Вход</a>
+                </li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'sign up' %}">Регистрация</a>
+                </li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#">Категории</a>
+                    <div class="u-nav-popup">
+                        <ul class="u-h-spacing-10 u-nav u-unstyled u-v-spacing-8">
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'starters' %}">Предястия</a>
+                            </li>
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link"
+                                                      href="{% url 'pasta' %}">Тестени</a>
+                            </li>
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'meal' %}">Основни
+                                ястия</a>
+                            </li>
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link"
+                                                      href="{% url 'cakes' %}">Торти</a>
+                            </li>
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'deserts' %}">Сладки</a>
+                            </li>
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'vegan' %}">Здравословни</a>
+                            </li>
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'all recipes' %}">Всички</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                {% if request.user.is_authenticated %}
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'my recipes' %}">Моите
+                        рецепти</a>
+                    </li>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'add recipe' %}">Добави
+                        рецепта</a>
+                    </li>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link"
+                                              href="{% url 'profile details' request.user.id %}">Моят профил</a>
+                    </li>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'log out' %}">Изход</a>
+                    </li>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'profile details' request.user.id %}">Здравейте, {{ request.user.cookbookuserprofile.first_name }}!</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+    <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+</div>

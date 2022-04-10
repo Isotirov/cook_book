@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_name %}
+    <title>Уупс</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static '404.css' %}" media="screen">
+{% endblock %}
+
+{% block header_background %}
+    {% include 'headers/add_recipe.html' %}
+{% endblock %}
+
+{% block nav %}
+    {% include 'navs/base_nav.html' %}
+{% endblock %}
+
+{% block page_content %}
+    <section class="u-clearfix u-section-1" id="sec-e5e3">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h1 class="u-align-center u-custom-font u-font-open-sans u-text u-text-default u-text-1">УУПС</h1>
+        <h3 class="u-align-center u-custom-font u-font-open-sans u-text u-text-default u-text-2">ПОЯВИ СЕ ГРЕШКА.<br>ОТИДИ ОТНАЧАЛО И ПРОБВАЙ ПАК.
+        </h3>
+        <a href="{% url 'landing page' %}" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-1">ОТНАЧАЛО</a>
+      </div>
+    </section>
+{% endblock %}

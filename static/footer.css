@@ -1,0 +1,34 @@
+ .u-footer {
+  min-height: 120px;
+  background-image: linear-gradient(white, #666666);
+}
+
+.u-footer .u-social-icons-1 {
+  height: 32px;
+  min-height: 16px;
+  width: 158px;
+  min-width: 94px;
+  white-space: nowrap;
+  margin: 44px auto 44px calc(((100% - 1140px) / 2) + 491px);
+}
+
+.u-footer .u-icon-1 {
+  color: rgb(59, 89, 152) !important;
+}
+
+.u-footer .u-icon-2 {
+  color: rgb(85, 172, 238) !important;
+}
+
+.u-footer .u-icon-3 {
+  color: rgb(197, 54, 164) !important;
+}
+
+.u-footer .u-icon-4 {
+  color: rgb(0, 122, 185) !important;
+}
+@media (max-width: 1199px) {
+  .u-footer .u-social-icons-1 {
+    margin-bottom: 0;
+  }
+}

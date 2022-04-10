@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_name %}
+    <title>Добавяне на снимка/снимки</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'create_recipe.css' %}" media="screen">
+    <link href="{% static 'uploader.css' %}" rel="stylesheet">
+    <script src="{% static 'uploader.js' %}"></script>
+{% endblock %}
+
+{% block header_background %}
+    {% include 'headers/add_recipe.html' %}
+{% endblock %}
+
+{% block nav %}
+    {% include 'navs/base_nav.html' %}
+{% endblock %}
+
+{% block page_content %}
+    <section class="u-clearfix u-image u-section-1" id="sec-1283" data-image-width="2000" data-image-height="1333">
+        <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+            <div class="u-clearfix u-expanded-width u-gutter-18 u-layout-wrap u-layout-wrap-1">
+                <div class="u-gutter-0 u-layout">
+                    <div class="u-layout-row">
+                        <div class="u-align-center u-container-style u-image u-layout-cell u-size-60 u-image-1"
+                             data-image-width="2000" data-image-height="1333">
+                            <div class="u-container-layout u-container-layout-1" src="">
+                                <h2 class="u-custom-font u-font-open-sans u-text u-text-white u-text-1">Максимален брой
+                                    снимки - {{ max_files_allowed }}</h2>
+                                <div class="u-align-center u-form u-palette-5-light-3 u-radius-16 u-form-1">
+
+                                    {% if max_files_allowed %}
+                                        <form id="filesupload" method="post"
+                                              action="{% url 'upload my files' recipe.id %}">
+                                            {% csrf_token %}
+                                            <div id="drag-drop-area"></div>
+                                        </form>
+                                    {% endif %}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+{% endblock %}
+
+{% block script %}
+    <script>
+        let uppy = new Uppy.Core({
+            restrictions: {
+                maxFileSize: 5242880,
+                allowedFileTypes: ['image/*'],
+                maxNumberOfFiles: {{ max_files_allowed }},
+            }
+        });
+
+        const Dashboard = Uppy.Dashboard
+        const Form = Uppy.Form
+        const XHRUpload = Uppy.XHRUpload
+        const FileInput = Uppy.FileInput
+
+        uppy.use(Dashboard, {
+            inline: true,
+            target: '#drag-drop-area',
+            showProgressDetails: true,
+            proudlyDisplayPoweredByUppy: false,
+        })
+            .use(XHRUpload, {
+                endpoint: '{% url 'upload files' recipe.id %}',
+                headers: {
+                    'X-CSRF-Token': " {{ csrf_token }} "
+                },
+                formData: true,
+                fieldName: 'files',
+                bundle: true,
+            })
+
+            .use(FileInput, {})
+
+            .use(Form, {
+                target: '#filesupload',
+                getMetaFromForm: true,
+                addResultToForm: true,
+                multipleResults: true,
+                submitOnSuccess: true,
+                triggerUploadOnSubmit: true
+            })
+
+        uppy.on('complete', (result) => {
+            console.log('Upload complete! We’ve uploaded these files:', result.successful)
+        })
+    </script>
+{% endblock %}

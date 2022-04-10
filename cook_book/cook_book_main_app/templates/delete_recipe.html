@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_name %}
+    <title>Изтриване рецепта</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'delete_recipe.css' %}" media="screen">
+{% endblock %}
+
+{% block header_background %}
+    {% if object.type == object.STARTER %}
+        {% include 'headers/starters_header.html' %}
+    {% endif %}
+    {% if object.type == object.PASTA %}
+        {% include 'headers/pasta_header.html' %}
+    {% endif %}
+    {% if object.type == object.CAKE %}
+        {% include 'headers/cakes_header.html' %}
+    {% endif %}
+    {% if object.type == object.SWEET %}
+        {% include 'headers/deserts_header.html' %}
+    {% endif %}
+    {% if object.type == object.VEGAN %}
+        {% include 'headers/vegie_header.html' %}
+    {% endif %}
+    {% if object.type == object.MEAL %}
+        {% include 'headers/all_recipes.html' %}
+    {% endif %}
+{% endblock %}
+
+{% block nav %}
+    {% include 'navs/base_nav.html' %}
+{% endblock %}
+
+{% block page_content %}
+    <section class="u-align-center u-clearfix u-section-1" id="sec-c620">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <h1 class="u-custom-font u-font-open-sans u-text u-text-default u-text-1">Сигурни ли сте, че искате да
+                изтриете?</h1>
+            <div class="u-align-center u-expanded-width-xs u-layout-grid u-list u-list-1">
+                <div class="u-align-center u-repeater u-repeater-1">
+                    <div class="u-container-style u-hover-feature u-list-item u-repeater-item u-list-item-1">
+                        {#                         data-animation-name="flipIn" data-animation-duration="1000" data-animation-direction="X"#}
+                        {#                         data-animation-out="0">#}
+                        <div class="u-container-layout u-similar-container u-container-layout-1">
+                            <img alt=""
+                                 class="u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-image u-image-round u-radius-15 u-image-1"
+                                 data-image-width="2000" data-image-height="1333"
+                                    {% if object.mealimage_set.first %}
+                                 src="{{ object.mealimage_set.first.image.url }}"
+                                    {% else %}
+                                 src="{% static 'images/default-meal-image.svg' %}"
+                                    {% endif %}
+                                 data-animation-out="0">
+                            <h3 class="u-align-center u-custom-font u-font-open-sans u-text u-text-body-alt-color u-text-default u-text-2">
+                                {{ object.title }}</h3>
+                            <form action="{% url 'delete recipe' object.id %}" method="post">
+                                {% csrf_token %}
+                                <a href="javascript:history.back()"
+                                   class="u-active-palette-1-base u-align-center u-btn u-btn-round u-button-style u-gradient u-hover-palette-2-base u-none u-radius-15 u-text-active-black u-text-hover-grey-50 u-btn-1">Отказ</a>
+                                <input type="submit" value="Изтрий" onclick="return confirm('Сигурни ли сте?');"
+                                       class="u-active-palette-1-base u-align-center u-btn u-btn-round u-button-style u-gradient u-hover-palette-2-base u-none u-radius-15 u-text-active-black u-text-hover-grey-50 u-btn-2">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

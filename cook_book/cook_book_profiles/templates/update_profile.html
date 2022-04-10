@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_name %}
+    <title>Попълване на профил</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'create_recipe.css' %}" media="screen">
+{% endblock %}
+
+{% block header_background %}
+    {% include 'headers/add_recipe.html' %}
+{% endblock %}
+
+{% block nav %}
+    {% include 'navs/base_nav.html' %}
+{% endblock %}
+
+{% block page_content %}
+    <section class="u-clearfix u-image u-section-1" id="sec-1283" data-image-width="2000" data-image-height="1333">
+        <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+            <div class="u-clearfix u-expanded-width u-gutter-18 u-layout-wrap u-layout-wrap-1">
+                <div class="u-gutter-0 u-layout">
+                    <div class="u-layout-row">
+                        <div class="u-align-center u-container-style u-image u-layout-cell u-size-60 u-image-1"
+                             data-image-width="2000" data-image-height="1333">
+                            <div class="u-container-layout u-container-layout-1" src="">
+                                <h2 class="u-custom-font u-font-open-sans u-text u-text-white u-text-1">Попълване на
+                                    профила</h2>
+                                <div class="u-align-center u-form u-palette-5-light-3 u-radius-16 u-form-1">
+
+
+                                    <form action="#" method="POST" enctype="multipart/form-data"
+                                          style="padding: 7px;">
+                                        <div class="u-form-group u-form-name">
+
+                                            {% csrf_token %}
+
+                                            {% for field in form %}
+                                                <label class="label-color">{{ field.label }}</label>
+                                                {{ field }}
+                                            {% endfor %}
+                                            {% if form.errors %}
+                                                {% for field in form %}
+                                                    {% for error in field.errors %}
+                                                        <div>
+                                                            <strong>{{ error|escape }}</strong>
+                                                        </div>
+                                                    {% endfor %}
+                                                {% endfor %}
+                                            {% endif %}
+                                            <br>
+                                            <div class="u-align-center">
+                                                <img id="myimage" class="img-preview" src="">
+                                            </div>
+
+                                            <div class="u-align-center u-form-group u-form-submit">
+                                                <a href="#"
+                                                   class="u-active-palette-1-base u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-2-dark-1 u-radius-9 u-btn-1">Запази</a>
+                                                <input type="submit" value="submit" class="u-form-control-hidden">
+                                            </div>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+{% endblock %}
+
+{% block script %}
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#myimage').attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+{% endblock %}
