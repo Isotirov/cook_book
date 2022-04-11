@@ -5,7 +5,19 @@ from django.contrib.auth.forms import AuthenticationForm, UsernameField, UserCre
 UserModel = get_user_model()
 
 
-class SignUpForm(UserCreationForm):
+class AuthBotCatcherMixin(forms.Form):
+    bot_catcher = forms.CharField(
+        required=False,
+        widget=forms.HiddenInput)
+
+    def clean_bot_catcher(self):
+        value = self.cleaned_data['bot_catcher']
+        if len(value) > 0:
+            raise forms.ValidationError("Ботче а?")
+        return value
+
+
+class SignUpForm(UserCreationForm, AuthBotCatcherMixin):
     error_messages = {
         'password_mismatch': 'Паролите не съвпадат!'
     }
@@ -49,7 +61,7 @@ class SignUpForm(UserCreationForm):
         }
 
 
-class SignInForm(AuthenticationForm):
+class SignInForm(AuthenticationForm, AuthBotCatcherMixin):
     error_messages = {
         "invalid_login": "Моля въведете коректен email и/или парола.",
     }

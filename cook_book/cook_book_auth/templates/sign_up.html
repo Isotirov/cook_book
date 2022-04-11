@@ -46,21 +46,21 @@
                         {% csrf_token %}
                         <div class="u-form-group u-form-name u-block-4fcb-50">
                             {% for field in form.visible_fields %}
-                                                <label class="label-color">{{ field.label }}</label>
-                                                {{ field }}
-                                            {% endfor %}
-                                            {% for field in form.hidden_fields %}
-                                                {{ field }}
-                                            {% endfor %}
-                                            {% if form.errors %}
-                                                {% for field in form %}
-                                                    {% for error in field.errors %}
-                                                        <div>
-                                                            <strong class="red">{{ error|escape }}</strong>
-                                                        </div>
-                                                    {% endfor %}
-                                                {% endfor %}
-                                            {% endif %}
+                                <label class="label-color">{{ field.label }}</label>
+                                {{ field }}
+                            {% endfor %}
+                            {% for field in form.hidden_fields %}
+                                {{ field }}
+                            {% endfor %}
+                            {% if form.errors %}
+                                {% for field in form %}
+                                    {% for error in field.errors %}
+                                        <div>
+                                            <strong class="red">{{ error|escape }}</strong>
+                                        </div>
+                                    {% endfor %}
+                                {% endfor %}
+                            {% endif %}
                         </div>
 
                         <div class="u-align-right u-form-group u-form-submit u-block-4fcb-58">
@@ -72,10 +72,11 @@
                         </div>
 
                     </form>
+
                 </div>
-                <a href="#"
+                <a href="{% url 'sign in' %}"
                    class="u-border-active-palette-2-base u-border-hover-palette-1-base u-border-none u-btn u-button-style u-login-control u-login-forgot-password u-none u-text-grey-40 u-text-hover-palette-4-base u-block-4fcb-60">
-                    Забравена парола</a>
+                    Вече имате регистрация?</a>
             </div>
         </div>
     </div>

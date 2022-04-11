@@ -2,11 +2,14 @@ import os
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db import IntegrityError
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.views import generic as views
+from django.views.decorators.cache import never_cache
 
-from cook_book.cook_book_main_app.forms import CreateRecipeForm, CommentForm, DeleteRecipeForm
+from cook_book.cook_book_main_app.forms import CreateRecipeForm, CommentForm
 from cook_book.cook_book_main_app.helper import max_files_upload_allowed
 from cook_book.cook_book_main_app.models import CookedMeal, MealImage, Like
 
@@ -70,21 +73,27 @@ class VeganView(BaseView):
     _TYPE = CookedMeal.VEGAN
 
 
+@never_cache
 @login_required()
 def create_recipe(request):
     if request.method == 'POST':
         form = CreateRecipeForm(request.POST)
         if form.is_valid():
-            recipe = form.save(commit=False)
-            recipe.user = request.user
-            recipe.save()
-            current_files_count = recipe.mealimage_set.count()
-            max_files_allowed = max_files_upload_allowed(current_files_count)
-            context = {
-                'recipe': recipe,
-                'max_files_allowed': max_files_allowed,
-            }
-            return render(request, 'uploader.html', context)
+            try:
+                recipe = form.save(commit=False)
+                recipe.user = request.user
+                recipe.save()
+                return redirect('upload files', recipe.id)
+            except IntegrityError:
+                return HttpResponse('Дубликат')
+            # current_files_count = recipe.mealimage_set.count()
+            # max_files_allowed = max_files_upload_allowed(current_files_count)
+            # context = {
+            #     'recipe': recipe,
+            #     'max_files_allowed': max_files_allowed,
+            # }
+
+            # return render(request, 'uploader.html', context)
     else:
         form = CreateRecipeForm()
     context = {
@@ -135,9 +144,7 @@ def delete_image(request, pk):
     image = MealImage.objects.get(pk=pk)
     if image:
         recipe_id = image.meal.id
-        image_path = image.image.path
         image.delete()
-        os.remove(image_path)
         return redirect('my recipe images', recipe_id)
 
 

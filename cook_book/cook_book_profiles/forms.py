@@ -33,3 +33,13 @@ class UpdateProfileForm(forms.ModelForm, ProfileFormsMixin):
                 },
             ),
         }
+
+    bot_catcher = forms.CharField(
+        required=False,
+        widget=forms.HiddenInput)
+
+    def clean_bot_catcher(self):
+        value = self.cleaned_data['bot_catcher']
+        if len(value) > 0:
+            raise forms.ValidationError("Ботче а?")
+        return value

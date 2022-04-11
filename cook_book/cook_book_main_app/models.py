@@ -49,6 +49,9 @@ class CookedMeal(models.Model):
             return f'{hour} ч. и {minutes} мин.'
         return f'{hour} ч.'
 
+    class Meta:
+        unique_together = ['type', 'title', 'user']
+
 
 class MealImage(models.Model):
     # _MAX_FILE_SIZE_MB = 5

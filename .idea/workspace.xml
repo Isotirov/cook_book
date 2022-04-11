@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d8f6c9ac-060c-4810-822d-752d478e1977" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/create_recipe.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/create_recipe.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/my_recipe_images.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/my_recipe_images.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/self_recipe_details.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/self_recipe_details.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/sign_in.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/sign_in.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/navs/base_nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navs/base_nav.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/uploader.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/uploader.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +23,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -120,7 +126,7 @@
       <workItem from="1648793594403" duration="86000" />
       <workItem from="1648984896276" duration="200248000" />
       <workItem from="1649587250130" duration="6851000" />
-      <workItem from="1649606331791" duration="9639000" />
+      <workItem from="1649606331791" duration="44631000" />
     </task>
     <servers />
   </component>
@@ -137,21 +143,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="django-line">
-          <url>file://$PROJECT_DIR$/templates/uploader.html</url>
-          <line>53</line>
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cook_book/cook_book_main_app/views.py</url>
-          <line>226</line>
-          <option name="timeStamp" value="65" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

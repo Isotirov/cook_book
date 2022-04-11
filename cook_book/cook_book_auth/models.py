@@ -42,6 +42,10 @@ class CookBookCustomUser(AbstractBaseUser):
         default=False,
     )
 
+    is_active = models.BooleanField(
+        default=False,
+    )
+
     USERNAME_FIELD = 'email'
 
     objects = CookBookManager()

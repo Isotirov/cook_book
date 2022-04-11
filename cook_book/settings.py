@@ -36,7 +36,7 @@ THIRD_PARTY_APPS = []
 INSTALLED_APPS = DJANGO_APPS + COOK_BOOK_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
-    'cook_book.cook_book_main_app.middlewares.handle_exception',
+    # 'cook_book.cook_book_main_app.middlewares.handle_exception',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -137,3 +137,10 @@ LOGIN_URL = reverse_lazy('sign in')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'cook_book_auth.CookBookCustomUser'
+
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = os.getenv('EMAIL_HOST')
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASS')
+EMAIL_PORT = 587

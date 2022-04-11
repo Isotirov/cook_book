@@ -3,7 +3,7 @@ from django.urls import path
 from cook_book.cook_book_main_app.views import CakesView, LandingPage, create_recipe, create_recipe_images, \
     RecipeDetailsView, AllRecipesView, PastaView, MealView, DesertsView, StartersView, VeganView, create_comment, \
     recipe_like, MyRecipesView, EditRecipeView, DeleteRecipeView, MyRecipeDetailsView, MyRecipePicturesView, \
-    delete_image, add_recipe_images
+    add_recipe_images, delete_image
 
 urlpatterns = [
     path('', LandingPage.as_view(), name='landing page'),

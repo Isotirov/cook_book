@@ -3,6 +3,18 @@ from django import forms
 from cook_book.cook_book_main_app.models import CookedMeal, MealImage, Comment
 
 
+class MainAppBotCatcherMixin(forms.Form):
+    bot_catcher = forms.CharField(
+        required=False,
+        widget=forms.HiddenInput)
+
+    def clean_bot_catcher(self):
+        value = self.cleaned_data['bot_catcher']
+        if len(value) > 0:
+            raise forms.ValidationError("Ботче а?")
+        return value
+
+
 class MainAppFormsMixin:
     fields = {}
 
@@ -13,7 +25,7 @@ class MainAppFormsMixin:
             field.widget.attrs['class'] += ' u-border-3 u-border-grey-30 u-input u-input-rectangle u-radius-10'
 
 
-class CreateRecipeForm(forms.ModelForm, MainAppFormsMixin):
+class CreateRecipeForm(forms.ModelForm, MainAppFormsMixin, MainAppBotCatcherMixin):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.add_class_create_recipe_form()
@@ -29,47 +41,26 @@ class CreateRecipeForm(forms.ModelForm, MainAppFormsMixin):
             'description': 'Описание / Начин на приготвяне',
         }
 
-    bot_catcher = forms.CharField(
-        required=False,
-        widget=forms.HiddenInput)
 
-    def clean_bot_catcher(self):
-        value = self.cleaned_data['bot_catcher']
-        if len(value) > 0:
-            raise forms.ValidationError("Gotcha BOT")
-        return value
-
-
-class DeleteRecipeForm(forms.ModelForm):
+class DeleteRecipeForm(forms.ModelForm, MainAppBotCatcherMixin):
     class Meta:
         model = CookedMeal
         fields = []
 
 
-class CreateMealImage(forms.ModelForm):
+class CreateMealImage(forms.ModelForm, MainAppBotCatcherMixin):
     class Meta:
         model = MealImage
         fields = '__all__'
 
 
-class EditRecipeForm(forms.ModelForm):
-
+class EditRecipeForm(forms.ModelForm, MainAppBotCatcherMixin):
     class Meta:
         model = CookedMeal
         exclude = ['type', 'user']
 
 
-# class DeleteRecipeForm(forms.ModelForm):
-#     class Meta:
-#         model = CookedMeal
-#         exclude = ['type', 'user']
-#
-#     def save(self, commit=True):
-#         self.instance.delete()
-#         return self.instance
-
-
-class CommentForm(forms.ModelForm):
+class CommentForm(forms.ModelForm, MainAppBotCatcherMixin):
     class Meta:
         model = Comment
         exclude = ['user', 'recipe']
@@ -83,13 +74,3 @@ class CommentForm(forms.ModelForm):
                 },
             ),
         }
-
-    bot_catcher = forms.CharField(
-        required=False,
-        widget=forms.HiddenInput)
-
-    def clean_bot_catcher(self):
-        value = self.cleaned_data['bot_catcher']
-        if len(value) > 0:
-            raise forms.ValidationError("Gotcha BOT")
-        return value
