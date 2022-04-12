@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8f6c9ac-060c-4810-822d-752d478e1977" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/media_files/profile_pictures/DJI_0466.JPG" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/media_files/profile_pictures/DSC_0237.JPG" beforeDir="false" />
@@ -10,6 +11,7 @@
       <change beforePath="$PROJECT_DIR$/media_files/profile_pictures/K7JN64XA6JZNUWEYJW7I6TPW7U.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/media_files/profile_pictures/K7JN64XA6JZNUWEYJW7I6TPW7U_5FChMzH.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/media_files/profile_pictures/default_profile_image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/create_recipe.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/create_recipe.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/my_recipe_images.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/my_recipe_images.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/self_recipe_details.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/self_recipe_details.css" afterDir="false" />
@@ -133,7 +135,7 @@
       <workItem from="1648793594403" duration="86000" />
       <workItem from="1648984896276" duration="200248000" />
       <workItem from="1649587250130" duration="6851000" />
-      <workItem from="1649606331791" duration="44789000" />
+      <workItem from="1649606331791" duration="47770000" />
     </task>
     <servers />
   </component>
