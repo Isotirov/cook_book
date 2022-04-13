@@ -63,11 +63,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mims_cook_book" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/cook_book/cook_book_auth/templates" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Van\PycharmProjects\djangoProject\cook_book\cook_book\cook_book_auth\templates" />
+      <recent name="C:\Users\Van\PycharmProjects\djangoProject\cook_book\static" />
       <recent name="C:\Users\Van\PycharmProjects\djangoProject\cook_book\cook_book\cook_book_main_app\templates" />
       <recent name="C:\Users\Van\PycharmProjects\djangoProject\cook_book\cook_book\cook_book_profiles\templates" />
     </key>
@@ -135,7 +137,7 @@
       <workItem from="1648793594403" duration="86000" />
       <workItem from="1648984896276" duration="200248000" />
       <workItem from="1649587250130" duration="6851000" />
-      <workItem from="1649606331791" duration="47770000" />
+      <workItem from="1649606331791" duration="75664000" />
     </task>
     <servers />
   </component>

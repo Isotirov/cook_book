@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_name %}
+    <title>Успешно активиране</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'mail_sent.css' %}" media="screen">
+{% endblock %}
+
+{% block header_background %}
+    {% include 'headers/add_recipe.html' %}
+{% endblock %}
+
+
+{% block page_content %}
+
+    <section class="u-clearfix u-section-1" id="sec-e5e3">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <h3 class="u-align-center u-custom-font u-font-open-sans u-text u-text-default u-text-1">Успешно активирахте профила си. Можете да се логнете.</h3>
+            <a href="{% url 'sign in' %}"
+               class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-1">Вход</a>
+        </div>
+    </section>
+{% endblock %}
