@@ -59,9 +59,9 @@
 {% block page_content %}
     <section class="u-clearfix u-image u-section-1" id="sec-c620">
         <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-custom-font u-font-open-sans u-text u-text-white u-text-1 center">{% if recipe %}{{ recipe }}{% else %}ВСИЧКИ РЕЦЕПТИ{% endif %}</h2>
             <div class="u-expanded-width-lg u-expanded-width-md u-expanded-width-xl u-layout-grid u-list u-list-1">
                 <div class="u-repeater u-repeater-1">
-
                     {% for recipe in object_list %}
                         <div class="u-container-style u-hover-feature u-list-item u-repeater-item u-list-item-1">
                             <div class="u-container-layout u-similar-container u-container-layout-1">

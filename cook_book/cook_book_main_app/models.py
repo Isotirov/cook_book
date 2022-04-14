@@ -8,12 +8,12 @@ UserModel = get_user_model()
 class CookedMeal(models.Model):
     _STARTER_TITLE_MAX_LENGTH = 30
 
-    STARTER = 'Предястие'
-    PASTA = 'Тестено изделие'
-    CAKE = 'Торта'
-    SWEET = 'Сладкиш'
-    MEAL = 'Основно ястие'
-    VEGAN = 'Веган'
+    STARTER = 'Предястия'
+    PASTA = 'Тестени изделия'
+    CAKE = 'Торти'
+    SWEET = 'Сладкиши'
+    MEAL = 'Основни ястия'
+    VEGAN = 'Здравословни'
 
     MEALS = [(x, x) for x in [STARTER, PASTA, CAKE, SWEET, MEAL, VEGAN]]
 
