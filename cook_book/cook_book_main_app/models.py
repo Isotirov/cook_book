@@ -52,6 +52,9 @@ class CookedMeal(models.Model):
     class Meta:
         unique_together = ['type', 'title', 'user']
 
+    def __str__(self):
+        return f'{self.title}'
+
 
 class MealImage(models.Model):
     # _MAX_FILE_SIZE_MB = 5

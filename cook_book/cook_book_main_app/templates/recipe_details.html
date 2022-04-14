@@ -42,6 +42,7 @@
             <div class="u-align-center u-expanded-width u-gallery u-layout-grid u-lightbox u-no-transition u-show-text-none u-gallery-1"
                  id="carousel-130d">
                 <div class="u-gallery-inner u-gallery-inner-1" role="listbox">
+                {% if object.mealimage_set.first %}
                     {% for image in object.mealimage_set.all %}
                         <div class="u-effect-hover-zoom u-gallery-item u-gallery-item-1">
                             <div class="u-back-slide">
@@ -53,6 +54,17 @@
                             </div>
                         </div>
                     {% endfor %}
+                {% else %}
+                    <div class="u-effect-hover-zoom u-gallery-item u-gallery-item-1">
+                            <div class="u-back-slide">
+                    <img class="u-back-image u-expanded" src="{% static 'images/default-meal-image.svg' %}">
+                    </div>
+                            <div class="u-align-center u-over-slide u-shading u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-over-slide-1">
+                                <h3 class="u-gallery-heading"></h3>
+                                <p class="u-gallery-text"></p>
+                            </div>
+                        </div>
+                {% endif %}
                 </div>
             </div>
         </div>
