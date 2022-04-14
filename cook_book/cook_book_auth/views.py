@@ -1,9 +1,8 @@
 from django.contrib.auth import get_user_model, logout
+from django.contrib.auth import views as pass_views
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.views import LoginView
-from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.views import LoginView, PasswordResetConfirmView
 from django.contrib.sites.shortcuts import get_current_site
-from django.core.exceptions import ValidationError
 from django.core.mail import EmailMessage
 from django.http import HttpResponse
 from django.shortcuts import redirect
@@ -12,11 +11,10 @@ from django.urls import reverse_lazy
 from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.views import generic as views
-from django.contrib.auth import views as pass_views
 
-from cook_book.cook_book_auth.forms import SignInForm, SignUpForm
+from cook_book.cook_book_auth.forms import SignInForm, SignUpForm, ResetPasswordForm
 from cook_book.cook_book_auth.helper import calculate_session_expiry_duration
-from cook_book.cook_book_auth.tokens import account_activation_token, TokenGenerator
+from cook_book.cook_book_auth.tokens import account_activation_token
 
 UserModel = get_user_model()
 
@@ -119,6 +117,11 @@ class PasswordResetViewCustom(pass_views.PasswordResetView):
         if not UserModel.objects.filter(email=self.request.POST['email']).exists():
             return redirect('not registered')
         return super().form_valid(form)
+
+
+class PasswordResetConfirmViewCustom(PasswordResetConfirmView):
+    form_class = ResetPasswordForm
+    template_name = 'set_new_password.html'
 
 
 class ResetPasswordSent(views.TemplateView):

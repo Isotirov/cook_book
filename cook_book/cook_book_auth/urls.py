@@ -1,8 +1,9 @@
-from django.contrib.auth.views import PasswordResetConfirmView, PasswordResetCompleteView
+from django.contrib.auth.views import PasswordResetCompleteView
 from django.urls import path
 
 from cook_book.cook_book_auth.views import LogOut, remember_me, activate, SignUp, ShowTemplateEmailSend, \
-    ShowTemplateActivationSuccess, PasswordResetViewCustom, PasswordChangeViewCustom, ResetPasswordSent, NoSuchEmail
+    ShowTemplateActivationSuccess, PasswordResetViewCustom, PasswordChangeViewCustom, ResetPasswordSent, NoSuchEmail, \
+    PasswordResetConfirmViewCustom
 
 urlpatterns = [
     path('sign-up/', SignUp.as_view(), name='sign up'),
@@ -17,8 +18,10 @@ urlpatterns = [
     path('password-reset/', PasswordResetViewCustom.as_view(), name='password reset mail'),
     path('reset-password-sent/', ResetPasswordSent.as_view(), name='reset password sent'),
     path('invalid-email/', NoSuchEmail.as_view(), name='not registered'),
-    path('password-reset-confirm/<uidb64>/<token>/', PasswordResetConfirmView.as_view(template_name='reset_password.html'), name='password_reset_confirm'),
-    path('password-reset-complete/', PasswordResetCompleteView.as_view(template_name='success_activation.html'), name='password_reset_complete'),
+    path('password-reset-confirm/<uidb64>/<token>/', PasswordResetConfirmViewCustom.as_view(), name='password_reset_confirm'),
+    path('password-reset-complete/',
+         PasswordResetCompleteView.as_view(template_name='success_password_reset.html'),
+         name='password_reset_complete'),
 ]
 
 

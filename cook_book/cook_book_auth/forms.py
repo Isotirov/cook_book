@@ -1,6 +1,7 @@
 from django import forms
-from django.contrib.auth import get_user_model
-from django.contrib.auth.forms import AuthenticationForm, UsernameField, UserCreationForm
+from django.contrib.auth import get_user_model, password_validation
+from django.contrib.auth.forms import AuthenticationForm, UsernameField, UserCreationForm, SetPasswordForm
+from django.core.exceptions import ValidationError
 
 UserModel = get_user_model()
 
@@ -87,4 +88,22 @@ class SignInForm(AuthenticationForm, AuthBotCatcherMixin):
                 'placeholder': 'Въведете парола',
             }
         ),
+    )
+
+
+class ResetPasswordForm(SetPasswordForm):
+    error_messages = {
+        "invalid_login": "Моля въведете коректен email и/или парола.",
+        'password_mismatch': 'Паролите не съвпадат!',
+    }
+
+    new_password1 = forms.CharField(
+        label="Парола",
+        widget=forms.PasswordInput(attrs={"autocomplete": "new-password"}),
+        strip=False,
+    )
+    new_password2 = forms.CharField(
+        label="Повторете паролата",
+        strip=False,
+        widget=forms.PasswordInput(attrs={"autocomplete": "new-password"}),
     )
