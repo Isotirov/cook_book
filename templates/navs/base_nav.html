@@ -1,7 +1,8 @@
 <div class="u-custom-menu u-nav-container">
     <ul class="u-nav u-spacing-1 u-unstyled u-nav-1">
         <li class="u-nav-item"><a
-                class="u-button-style u-custom-color-1 u-hover-white u-nav-link u-radius-16 u-text-hover-black" href="{% url 'landing page' %}"
+                class="u-button-style u-custom-color-1 u-hover-white u-nav-link u-radius-16 u-text-hover-black"
+                href="{% url 'landing page' %}"
                 style="padding: 10px 14px;">Начало</a>
         </li>
         {% if not request.user.is_authenticated %}
@@ -75,8 +76,10 @@
                     style="padding: 10px 27px 10px 14px;">Изход</a>
             </li>
             <li class="u-nav-item"><a
-                    class="u-button-style u-custom-color-1 u-hover-white u-nav-link u-text-hover-black" href="{% url 'profile details' request.user.id %}"
-                    style="padding: 10px 27px 10px 14px;">Здравейте{% if request.user.cookbookuserprofile.first_name %}, {{ request.user.cookbookuserprofile.first_name }}{% endif %}!</a>
+                    class="u-button-style u-custom-color-1 u-hover-white u-nav-link u-text-hover-black"
+                    href="{% url 'profile details' request.user.id %}"
+                    style="padding: 10px 27px 10px 14px;">Здравейте{% if request.user.cookbookuserprofile.first_name %}
+                {{ request.user.cookbookuserprofile.first_name }}{% endif %}!</a>
             </li>
         {% endif %}
     </ul>
@@ -88,10 +91,13 @@
             <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3">
                 <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'landing page' %}">Начало</a>
                 </li>
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'sign in' %}">Вход</a>
-                </li>
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'sign up' %}">Регистрация</a>
-                </li>
+                {% if not request.user.is_authenticated %}
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'sign in' %}">Вход</a>
+                    </li>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link"
+                                              href="{% url 'sign up' %}">Регистрация</a>
+                    </li>
+                {% endif %}
                 <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#">Категории</a>
                     <div class="u-nav-popup">
                         <ul class="u-h-spacing-10 u-nav u-unstyled u-v-spacing-8">
@@ -127,7 +133,10 @@
                     </li>
                     <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'log out' %}">Изход</a>
                     </li>
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'profile details' request.user.id %}">Здравейте, {{ request.user.cookbookuserprofile.first_name }}!</a>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link"
+                                              href="{% url 'profile details' request.user.id %}">Здравейте
+                        {% if request.user.cookbookuserprofile.first_name %}
+                            {{ request.user.cookbookuserprofile.first_name }}{% endif %}!</a>
                     </li>
                 {% endif %}
             </ul>
