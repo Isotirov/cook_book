@@ -19,10 +19,8 @@ def create_profile_after_user_registration(created, instance, **kwargs):
 
 @receiver(pre_save, sender=CookBookUserProfile)
 def check_profile_completion(instance, **kwargs):
-    first_name = 'Нов'
-    last_name = 'Профил'
 
-    if instance.image and not instance.first_name == first_name and not instance.last_name == last_name:
+    if instance.first_name and instance.last_name:
         instance.is_complete = True
     else:
         instance.is_complete = False
