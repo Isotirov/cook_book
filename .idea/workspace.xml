@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8f6c9ac-060c-4810-822d-752d478e1977" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media_files/profile_pictures/DJI_0466.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media_files/profile_pictures/DSC_0237.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media_files/profile_pictures/DSC_0260.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media_files/profile_pictures/IMG_20211218_152414.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media_files/profile_pictures/K7JN64XA6JZNUWEYJW7I6TPW7U.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media_files/profile_pictures/K7JN64XA6JZNUWEYJW7I6TPW7U_5FChMzH.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media_files/profile_pictures/default_profile_image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/create_recipe.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/create_recipe.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/meals_view.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/meals_view.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/my_recipe_images.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/my_recipe_images.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/self_recipe_details.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/self_recipe_details.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/sign_in.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/sign_in.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/navs/base_nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navs/base_nav.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/uploader.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/uploader.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +47,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/cook_book/cook_book_auth/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
   </component>
   <component name="RecentsManager">
@@ -138,7 +121,8 @@
       <workItem from="1648793594403" duration="86000" />
       <workItem from="1648984896276" duration="200248000" />
       <workItem from="1649587250130" duration="6851000" />
-      <workItem from="1649606331791" duration="88239000" />
+      <workItem from="1649606331791" duration="89269000" />
+      <workItem from="1649959041087" duration="655000" />
     </task>
     <servers />
   </component>
