@@ -64,7 +64,7 @@
                              src="">
                             <div class="u-container-layout u-container-layout-7" src="">
                                 <img class="u-align-left u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-image u-image-round u-preserve-proportions u-radius-10 u-image-1"
-                                     data-image-width="1280" data-image-height="854" src="{{ object.image.url }}">
+                                     data-image-width="1280" data-image-height="854" src="{% if object.image %}{{ object.image.url }}{% else %}{% static 'icons/default-profile-picture.png' %}{% endif %}">
                                 <div class="u-align-left u-image u-image-round u-preserve-proportions u-radius-10 u-image-2"
                                      data-image-width="1280" data-image-height="854"></div>
                             </div>

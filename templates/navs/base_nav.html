@@ -76,7 +76,7 @@
             </li>
             <li class="u-nav-item"><a
                     class="u-button-style u-custom-color-1 u-hover-white u-nav-link u-text-hover-black" href="{% url 'profile details' request.user.id %}"
-                    style="padding: 10px 27px 10px 14px;">Здравейте{% if not request.user.cookbookuserprofile.first_name == 'Нов' %}, {{ request.user.cookbookuserprofile.first_name }}!{% endif %}</a>
+                    style="padding: 10px 27px 10px 14px;">Здравейте{% if request.user.cookbookuserprofile.first_name %}, {{ request.user.cookbookuserprofile.first_name }}{% endif %}!</a>
             </li>
         {% endif %}
     </ul>

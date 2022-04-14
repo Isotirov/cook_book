@@ -16,7 +16,10 @@ class CookBookUserProfile(models.Model):
     MAX_FILE_SIZE = 5
     MIN_LENGTH_ERROR_MESSAGE = 'Името трябва да съдържа поне две букви!'
 
-    image = cloudinary_model.CloudinaryField('image')
+    image = cloudinary_model.CloudinaryField(
+        'image',
+        blank=True,
+    )
     #         (
     #     upload_to='profile_pictures',
     #     default='profile_pictures/default_profile_image.png',
@@ -25,7 +28,7 @@ class CookBookUserProfile(models.Model):
 
     first_name = models.CharField(
         max_length=FIRST_NAME_MAX_LENGTH,
-        default='Нов',
+        blank=True,
         validators=[MinLengthValidator(FIRST_NAME_MIN_LENGTH), only_letters_validator],
         error_messages={
             'min_length': MIN_LENGTH_ERROR_MESSAGE,
@@ -34,7 +37,7 @@ class CookBookUserProfile(models.Model):
 
     last_name = models.CharField(
         max_length=LAST_NAME_MAXLENGTH,
-        default='Потребител',
+        blank=True,
         validators=[MinLengthValidator(LAST_NAME_MIN_LENGTH), only_letters_validator],
         error_messages={
             'min_length': MIN_LENGTH_ERROR_MESSAGE,

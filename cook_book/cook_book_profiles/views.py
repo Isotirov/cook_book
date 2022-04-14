@@ -19,21 +19,6 @@ class UpdateProfileView(views.UpdateView, LoginRequiredMixin):
         return reverse_lazy('profile details', kwargs={'pk': profile_id})
 
 
-# def update_profile(request, pk):
-#     profile = CookBookUserProfile.objects.get(pk=pk)
-#     if request.method == 'POST':
-#         form = UpdateProfileForm(request.method, request.FILES, instance=profile)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('landing page')
-#     else:
-#         form = UpdateProfileForm(instance=profile)
-#     context = {
-#         'form': form,
-#     }
-#     return render(request, 'update_profile.html', context)
-
-
 class ProfileView(views.DetailView, LoginRequiredMixin):
     model = CookBookUserProfile
     template_name = 'profile.html'

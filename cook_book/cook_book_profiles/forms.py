@@ -22,7 +22,7 @@ class UpdateProfileForm(forms.ModelForm, ProfileFormsMixin):
         model = CookBookUserProfile
         exclude = ['joined', 'user', 'is_complete']
         labels = {
-            'image': 'Профилна снимка - оставете празно, за да остане сегашната снимка',
+            'image': 'Профилна снимка - може да добавите и по-късно',
             'first_name': 'Име',
             'last_name': 'Фамилия',
         }
