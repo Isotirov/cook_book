@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_name %}
+    <title>Неуспешно добавяне</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'duplicate_recipe.css' %}" media="screen">
+{% endblock %}
+
+{% block header_background %}
+    {% include 'headers/add_recipe.html' %}
+{% endblock %}
+
+{% block nav %}
+    {% include 'navs/base_nav.html' %}
+{% endblock %}
+
+{% block page_content %}
+    <section class="u-align-center u-clearfix u-section-1" id="sec-e5e3">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h3 class="u-custom-font u-font-open-sans u-text u-text-default u-text-1">{{ error }}</h3>
+        <a href="{% url 'add recipe' %}" class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-1">добави друга</a>
+        <a href="{% url 'my recipes' %}" class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-2">отказ</a>
+      </div>
+    </section>
+{% endblock %}

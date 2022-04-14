@@ -3,6 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db import IntegrityError
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
+from django.template.loader import render_to_string
 from django.urls import reverse_lazy
 from django.views import generic as views
 from django.views.decorators.cache import never_cache
@@ -83,15 +84,9 @@ def create_recipe(request):
                 recipe.save()
                 return redirect('upload files', recipe.id)
             except IntegrityError:
-                return HttpResponse('Дубликат')
-            # current_files_count = recipe.mealimage_set.count()
-            # max_files_allowed = max_files_upload_allowed(current_files_count)
-            # context = {
-            #     'recipe': recipe,
-            #     'max_files_allowed': max_files_allowed,
-            # }
-
-            # return render(request, 'uploader.html', context)
+                error_message = render_to_string('duplicate_recipe.html', {'error': 'Рецептата се дублира'})
+                response = HttpResponse(error_message)
+                return response
     else:
         form = CreateRecipeForm()
     context = {
