@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1').split(' ')
 APP_ENV = os.getenv('APP_ENV')
@@ -36,7 +36,7 @@ THIRD_PARTY_APPS = []
 INSTALLED_APPS = DJANGO_APPS + COOK_BOOK_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
-    # 'cook_book.cook_book_main_app.middlewares.handle_exception',
+    'cook_book.cook_book_main_app.middlewares.handle_exception',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
