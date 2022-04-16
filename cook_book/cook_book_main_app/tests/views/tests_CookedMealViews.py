@@ -13,6 +13,11 @@ class CookedMealViewTests(d_test_case.TestCase):
         'password': 'marata'
     }
 
+    VALID_USER_DATA1 = {
+        'email': 'van@van1.com',
+        'password': 'marata'
+    }
+
     VALID_MEAL_DATA = {
         'type': CookedMeal.STARTER,
         'title': 'food',
@@ -36,7 +41,7 @@ class CookedMealViewTests(d_test_case.TestCase):
         return meal
 
     def __create_user(self):
-        user = UserModel.objects.create(**self.VALID_USER_DATA)
+        user = UserModel.objects.create(**self.VALID_USER_DATA1)
 
         return user
 

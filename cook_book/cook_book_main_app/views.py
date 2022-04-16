@@ -72,7 +72,6 @@ class VeganView(BaseView):
     _TYPE = CookedMeal.VEGAN
 
 
-@never_cache
 @login_required()
 def create_recipe(request):
     if request.method == 'POST':
@@ -242,33 +241,3 @@ def add_recipe_images(request, pk):
 
 def internal_error(request):
     return render(request, 'errors.html')
-
-
-#
-# class EditMealView(views.UpdateView, LoginRequiredMixin):
-#     model = CookedMeal
-#     template_name = ''
-#
-#     def get_success_url(self):
-#         return reverse_lazy('meal details', self.object.id)
-
-
-# class MealDetailsView(views.DetailView):
-#     model = CookedMeal
-#     template_name = ''
-
-
-# @login_required(reverse_lazy('sign in'))
-# def delete_meal(request, pk):
-#     meal = CookedMeal.objects.get(pk=pk)
-#     if request.method == 'POST':
-#         form = DeleteModelForm(request.POST, instance=meal)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('')
-#     else:
-#         form = DeleteModelForm(instance=meal)
-#     context = {
-#         'form': form,
-#     }
-#     return render(request, '', context)

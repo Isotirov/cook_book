@@ -75,7 +75,11 @@
                 <h2 class="u-align-center u-custom-font u-font-open-sans u-text u-text-1">Рецептата е моя</h2>
             {% else %}
                 <h2 class="u-align-center u-custom-font u-font-open-sans u-text u-text-1">Рецептата е приготвена
-                    от:<br>{{ object.user.cookbookuserprofile }}
+                    от:<br>{% if object.user.cookbookuserprofile.first_name or object.user.cookbookuserprofile.last_name %}
+                        {{ object.user.cookbookuserprofile }}
+                    {% else %}
+                        {{ object.user }}
+                    {% endif %}
                 </h2>
             {% endif %}
             <div class="u-align-center u-container-style u-group u-group-1">

@@ -1,5 +1,3 @@
-from django.utils.cache import add_never_cache_headers
-
 from cook_book.cook_book_main_app.views import internal_error
 
 
