@@ -7,7 +7,7 @@ from django.urls import reverse_lazy
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY', 'hsdgflscbvsbvbsjd04563fdfghj')
 
 DEBUG = True
 
