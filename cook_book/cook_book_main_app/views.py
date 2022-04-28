@@ -6,7 +6,6 @@ from django.shortcuts import redirect, render
 from django.template.loader import render_to_string
 from django.urls import reverse_lazy
 from django.views import generic as views
-from django.views.decorators.cache import never_cache
 
 from cook_book.cook_book_main_app.forms import CreateRecipeForm, CommentForm
 from cook_book.cook_book_main_app.helper import max_files_upload_allowed

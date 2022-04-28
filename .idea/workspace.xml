@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8f6c9ac-060c-4810-822d-752d478e1977" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/54cf2764-1052-4a89-969d-12def04342d8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/54cf2764-1052-4a89-969d-12def04342d8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/54cf2764-1052-4a89-969d-12def04342d8/storage_v2/_src_/database/cook_book_db.nW-5_Q/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/54cf2764-1052-4a89-969d-12def04342d8/storage_v2/_src_/database/cook_book_db.nW-5_Q/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +18,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -65,7 +67,107 @@
       <recent name="C:\Users\Van\PycharmProjects\djangoProject\cook_book\static\icons" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django Server.cook_book">
+    <configuration name="Test: cook_book.cook_book_main_app.tests.views.tests_CookedMealViews.CookedMealViewTests" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="cook_book" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="cook_book.cook_book_main_app.tests.views.tests_CookedMealViews.CookedMealViewTests" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: cook_book.cook_book_main_app.tests.views.tests_CookedMealViews.CookedMealViewTests.test_comment_create_valid_data__expect_success" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="cook_book" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="cook_book.cook_book_main_app.tests.views.tests_CookedMealViews.CookedMealViewTests.test_comment_create_valid_data__expect_success" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: cook_book.cook_book_main_app.tests.views.tests_CookedMealViews.CookedMealViewTests.test_create_recipe__expect_to_create" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="cook_book" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="cook_book.cook_book_main_app.tests.views.tests_CookedMealViews.CookedMealViewTests.test_create_recipe__expect_to_create" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: cook_book.cook_book_main_app.tests.views.tests_CookedMealViews.CookedMealViewTests.test_some" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="cook_book" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="cook_book.cook_book_main_app.tests.views.tests_CookedMealViews.CookedMealViewTests.test_some" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: cook_book.cook_book_main_app.tests.views.tests_CookedMealViews.CookedMealViewTests.test_something" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="cook_book" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="cook_book.cook_book_main_app.tests.views.tests_CookedMealViews.CookedMealViewTests.test_something" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="cook_book" type="Python.DjangoServer" factoryName="Django server">
       <module name="cook_book" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -101,6 +203,15 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Django tests.Test: cook_book.cook_book_main_app.tests.views.tests_CookedMealViews.CookedMealViewTests" />
+        <item itemvalue="Django tests.Test: cook_book.cook_book_main_app.tests.views.tests_CookedMealViews.CookedMealViewTests.test_something" />
+        <item itemvalue="Django tests.Test: cook_book.cook_book_main_app.tests.views.tests_CookedMealViews.CookedMealViewTests.test_some" />
+        <item itemvalue="Django tests.Test: cook_book.cook_book_main_app.tests.views.tests_CookedMealViews.CookedMealViewTests.test_create_recipe__expect_to_create" />
+        <item itemvalue="Django tests.Test: cook_book.cook_book_main_app.tests.views.tests_CookedMealViews.CookedMealViewTests.test_comment_create_valid_data__expect_success" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -122,7 +233,8 @@
       <workItem from="1648984896276" duration="200248000" />
       <workItem from="1649587250130" duration="6851000" />
       <workItem from="1649606331791" duration="89269000" />
-      <workItem from="1649959041087" duration="2160000" />
+      <workItem from="1649959041087" duration="50922000" />
+      <workItem from="1651167981017" duration="836000" />
     </task>
     <servers />
   </component>
@@ -139,5 +251,39 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="django-line">
+          <url>file://$PROJECT_DIR$/cook_book/cook_book_main_app/templates/recipe_details.html</url>
+          <line>77</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/cook_book$Test__cook_book_cook_book_profiles_tests_models_tests_CookBookUserProfile_CookBookUserProfilesTests_test_profile_create__profile_full_name__expect_correct.coverage" NAME="Test: cook_book.cook_book_profiles.tests.models.tests_CookBookUserProfile.CookBookUserProfilesTests.test_profile_create__profile_full_name__expect_correct Coverage Results" MODIFIED="1649971551772" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cook_book$Test__cook_book_cook_book_profiles_tests_models_tests_CookBookUserProfile_CookBookUserProfilesTests_test_profile_create__when_not_all_data_entered_is_complete__expect_false.coverage" NAME="Test: cook_book.cook_book_profiles.tests.models.tests_CookBookUserProfile.CookBookUserProfilesTests.test_profile_create__when_not_all_data_entered_is_complete__expect_false Coverage Results" MODIFIED="1649973539761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cook_book$Test__cook_book_cook_book_profiles_tests_models_tests_CookBookUserProfile_CookBookUserProfilesTests_test_profile_create__when_first_name_does_not_contains_only_letters__expect_failure.coverage" NAME="Test: cook_book.cook_book_profiles.tests.models.tests_CookBookUserProfile.CookBookUserProfilesTests.test_profile_create__when_first_name_does_not_contains_only_letters__expect_failure Coverage Results" MODIFIED="1649975275786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cook_book$Test__cook_book_cook_book_main_app_tests_views_tests_CookedMealViews_CookedMealViewTests_test_not_valid_url__expect_404.coverage" NAME="Test: cook_book.cook_book_main_app.tests.views.tests_CookedMealViews.CookedMealViewTests.test_not_valid_url__expect_404 Coverage Results" MODIFIED="1650065954462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cook_book$Test__cook_book_cook_book_main_app_tests_views_tests_CookedMealViews_CookedMealViewTests_test_comment_create_valid_data__expect_success.coverage" NAME="Test: cook_book.cook_book_main_app.tests.views.tests_CookedMealViews.CookedMealViewTests.test_comment_create_valid_data__expect_success Coverage Results" MODIFIED="1650068538257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cook_book$Test__cook_book_cook_book_main_app_tests_models_tests_CookedMeal_CookedMealTests_test_format_cooking_time_more_than_sixty_minutes.coverage" NAME="Test: cook_book.cook_book_main_app.tests.models.tests_CookedMeal.CookedMealTests.test_format_cooking_time_more_than_sixty_minutes Coverage Results" MODIFIED="1649974411701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cook_book$Test__cook_book_cook_book_profiles_tests_models_tests_CookBookUserProfile_CookBookUserProfilesTests_test_profile_create__when_all_data_entered_is_complete_true__expect_true.coverage" NAME="Test: cook_book.cook_book_profiles.tests.models.tests_CookBookUserProfile.CookBookUserProfilesTests.test_profile_create__when_all_data_entered_is_complete_true__expect_true Coverage Results" MODIFIED="1649973325223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cook_book$Test__cook_book_cook_book_main_app_tests_models_tests_CookedMeal_CookedMealTests_test_format_cooking_time_less_than_sixty_minutes.coverage" NAME="Test: cook_book.cook_book_main_app.tests.models.tests_CookedMeal.CookedMealTests.test_format_cooking_time_less_than_sixty_minutes Coverage Results" MODIFIED="1649974285729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cook_book$Test__cook_book_cook_book_main_app_tests_views_tests_CookedMealViews_CookedMealViewTests_test_some.coverage" NAME="Test: cook_book.cook_book_main_app.tests.views.tests_CookedMealViews.CookedMealViewTests.test_some Coverage Results" MODIFIED="1650105637403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cook_book$Test__cook_book_cook_book_main_app_tests_models_tests_CookedMeal_CookedMealTests.coverage" NAME="Test: cook_book.cook_book_main_app.tests.models.tests_CookedMeal.CookedMealTests Coverage Results" MODIFIED="1649974610626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cook_book$Test__cook_book_cook_book_main_app_tests_models_tests_CookedMeal_CookedMealTests_test_format_cooking_time_more_than_sixty_minutes_and_round_the_clock.coverage" NAME="Test: cook_book.cook_book_main_app.tests.models.tests_CookedMeal.CookedMealTests.test_format_cooking_time_more_than_sixty_minutes_and_round_the_clock Coverage Results" MODIFIED="1649974603749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cook_book$Test__cook_book_cook_book_main_app_tests_views_tests_CookedMealViews_CookedMealViewTests_test_get__expect_correct_template.coverage" NAME="Test: cook_book.cook_book_main_app.tests.views.tests_CookedMealViews.CookedMealViewTests.test_get__expect_correct_template Coverage Results" MODIFIED="1650048389097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cook_book$Test__cook_book_cook_book_main_app_tests_views_tests_CookedMealViews_CookedMealViewTests.coverage" NAME="Test: cook_book.cook_book_main_app.tests.views.tests_CookedMealViews.CookedMealViewTests Coverage Results" MODIFIED="1650106672038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cook_book$Test__cook_book_cook_book_profiles_tests_models_tests_CookBookUserProfile_CookBookUserProfilesTests.coverage" NAME="Test: cook_book.cook_book_profiles.tests.models.tests_CookBookUserProfile.CookBookUserProfilesTests Coverage Results" MODIFIED="1650027432633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cook_book$Test__cook_book_cook_book_profiles_tests_models_tests_CookBookUserProfile_CookBookUserProfilesTests_test_profile_create__when_first_name_last_name_contain_only_letters__expect_success.coverage" NAME="Test: cook_book.cook_book_profiles.tests.models.tests_CookBookUserProfile.CookBookUserProfilesTests.test_profile_create__when_first_name_last_name_contain_only_letters__expect_success Coverage Results" MODIFIED="1650047638278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cook_book$Test__cook_book_cook_book_profiles_tests_models_tests_CookBookUserProfile_CookBookUserProfilesTests_test_profile_create__when_first_name_contains_only_letters__expect_success.coverage" NAME="Test: cook_book.cook_book_profiles.tests.models.tests_CookBookUserProfile.CookBookUserProfilesTests.test_profile_create__when_first_name_contains_only_letters__expect_success Coverage Results" MODIFIED="1649971240030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cook_book$Test__cook_book_cook_book_main_app_tests.coverage" NAME="Test: cook_book.cook_book_main_app.tests Coverage Results" MODIFIED="1650053240531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cook_book$Test__cook_book_cook_book_main_app_tests_views_tests_CookedMealViews_CookedMealViewTests_test_create_recipe__expect_to_create.coverage" NAME="Test: cook_book.cook_book_main_app.tests.views.tests_CookedMealViews.CookedMealViewTests.test_create_recipe__expect_to_create Coverage Results" MODIFIED="1650068732390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cook_book$Test__cook_book_cook_book_main_app_tests_views_tests_CookedMealViews_CookedMealViewTests_test_something.coverage" NAME="Test: cook_book.cook_book_main_app.tests.views.tests_CookedMealViews.CookedMealViewTests.test_something Coverage Results" MODIFIED="1650106657722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cook_book$Test__cook_book_cook_book_main_app_tests_views_tests_CookedMealViews_CookedMealViewTests_test_queryset_contains_one_object__expect_to_return_only_one_object.coverage" NAME="Test: cook_book.cook_book_main_app.tests.views.tests_CookedMealViews.CookedMealViewTests.test_queryset_contains_one_object__expect_to_return_only_one_object Coverage Results" MODIFIED="1650055137546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cook_book$Test__cook_book_cook_book_main_app_tests_views_tests_CookedMealViews_CookedMealViewTests_test_when_two_recipes__expect_two_recipes.coverage" NAME="Test: cook_book.cook_book_main_app.tests.views.tests_CookedMealViews.CookedMealViewTests.test_when_two_recipes__expect_two_recipes Coverage Results" MODIFIED="1650066030881" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
